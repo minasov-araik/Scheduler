@@ -1,5 +1,6 @@
 <?php namespace App\Libraries\CronJob;
 
+use App\Libraries\CronJob\Cron\CronExpression;
 use CodeIgniter\Events\Events;
 use App\Libraries\CronJob\Exceptions\CronJobException;
 use Config\Services;
@@ -142,7 +143,7 @@ class Job {
             return FALSE;
         }
 
-        $cron = \Cron\CronExpression::factory($this->getExpression());
+        $cron = CronExpression::factory($this->getExpression());
 
         $testTime = ($testTime) ? $testTime : 'now';
 

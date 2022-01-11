@@ -1,0 +1,14 @@
+[
+    {
+        "name": "foo",
+        "type": "closure",
+        "action": "{}",
+        "environment": "[]",
+        "output": "Run Scheduler",
+        "error": null,
+        "start_at": "2022-01-11 11:53:01",
+        "end_at": "2022-01-11 11:53:01",
+        "duration": "00:00",
+        "test_time": null
+    }
+]
