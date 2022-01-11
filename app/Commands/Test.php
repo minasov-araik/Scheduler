@@ -12,7 +12,7 @@ class Test extends BaseCommand
      *
      * @var string
      */
-    protected $group = 'CodeIgniter';
+    protected $group = 'test_group';
 
     /**
      * The Command's Name
@@ -56,6 +56,6 @@ class Test extends BaseCommand
      */
     public function run(array $params)
     {
-        echo 'Test command';
+        echo 'Run baby run!!!!';
     }
 }
