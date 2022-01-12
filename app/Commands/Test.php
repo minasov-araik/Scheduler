@@ -2,6 +2,7 @@
 
 namespace App\Commands;
 
+use App\Libraries\CronJob\Scheduler;
 use CodeIgniter\CLI\BaseCommand;
 use CodeIgniter\CLI\CLI;
 
@@ -56,6 +57,12 @@ class Test extends BaseCommand
      */
     public function run(array $params)
     {
-        echo 'Run baby run!!!!';
+        echo 'Run baby run:)';
+        $schedule = new Scheduler();
+        $schedule->call(function () {
+            echo 'run Scheduler!!!';
+            file_put_contents('test.txt', __METHOD__ . ' , date time : ' . date('Y-m-d H:i:s') . PHP_EOL, FILE_APPEND);
+
+        })->everyMinute()->named('cron_method');
     }
 }
