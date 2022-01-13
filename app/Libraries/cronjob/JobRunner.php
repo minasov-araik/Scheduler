@@ -36,9 +36,12 @@ class JobRunner {
      */
     protected $performanceLogs = [];
 
-    public function __construct()
+    /**
+     * @param Scheduler $scheduler
+     */
+    public function __construct(Scheduler $scheduler)
     {
-        $this->scheduler = service('scheduler');
+        $this->scheduler = $scheduler;
     }
 
     /**
@@ -193,7 +196,7 @@ class JobRunner {
     /**
      * Write a line to command line interface
      *
-     * @param string      $text
+     * @param string $text
      * @param string|null $foreground
      */
     protected function cliWrite(string $text, string $foreground = NULL)
